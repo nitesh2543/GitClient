@@ -1,0 +1,77 @@
+<layout>
+
+    <data>
+
+        <variable
+            name="repo"
+            type="com.lbrand.githubclient.mvvm.model.Repo" />
+
+        <variable
+            name="user"
+            type="com.lbrand.githubclient.mvvm.model.User" />
+    </data>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".mvvm.view.fragment.RepoDetailFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@{user.avatarUrl}"/>
+
+            <TextView
+                android:id="@+id/name_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/darker_gray"
+                android:padding="10dp"
+                android:text="Rep name and discription"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name_header"
+                android:autoLink="web"
+                android:padding="10dp"
+                android:text="@{repo.name}" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name_header"
+                android:padding="10dp"
+                android:text="@{`Discription : `+repo.description}" />
+
+
+            <TextView
+                android:id="@+id/url_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/darker_gray"
+                android:padding="10dp"
+                android:text="Repo URL"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/url_header"
+                android:autoLink="web"
+                android:padding="10dp"
+                android:text="@{repo.htmlUrl}" />
+
+        </LinearLayout>
+    </ScrollView>
+</layout>
